@@ -8,25 +8,20 @@
 
 <petclinic:layout pageName="products">
     <h2>
-        <c:if test="${product['new']}">New </c:if> Product
+        New Product
     </h2>
     <form:form modelAttribute="product" class="form-horizontal" id="add-product-form">
         <div class="form-group has-feedback">
             <petclinic:inputField label="Name" name="name"/>
             <petclinic:inputField label="Price" name="price"/>
-            <petclinic:selectField name="ProductType" label="Product Type " names="${ProductType}" size="5"/>
+            <div class="control-group">
+                <petClinic:selectField name = "productType" label="Product Type" names="${productType}" size="3"/>
+            </div>
             
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <c:choose>
-                    <c:when test="${product['new']}">
-                        <button class="btn btn-default" type="submit">Add Product</button>
-                    </c:when>
-                    <c:otherwise>
-                        <button class="btn btn-default" type="submit">Update Product</button>
-                    </c:otherwise>
-                </c:choose>
+                <button class="btn btn-default" type="submit">Add Product</button>
             </div>
         </div>
     </form:form>

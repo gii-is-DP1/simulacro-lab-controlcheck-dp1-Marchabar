@@ -29,6 +29,17 @@ public class ProductController {
 
     }
 
+    /*
+    @GetMapping(path = "/create")
+    public String createProduct(ModelMap model ){
+        model.addAttribute("product", new Product());
+        model.addAttribute("productTypes", productService.findAllProductTypes());
+
+        return CREATE_PRODUCT;
+
+    }
+    */ 
+
     @PostMapping("/product/create")
     public ModelAndView saveAddedProduct(@Valid Product p, BindingResult br){
         if(!br.hasErrors()){
